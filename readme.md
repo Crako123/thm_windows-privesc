@@ -59,3 +59,14 @@ BOOL WINAPI DllMain (HANDLE hDll, DWORD dwReason, LPVOID lpReserved) {
     return TRUE;
 }
 ```
+
+## Task 6: Unquoted Service Path
+
+* get running service with pathnames `wmic service get name,displayname,pathname,startmode`
+* get more information about found service `sc qc unquotedsvc`
+* use installed program (on desktop) to find paths with write access
+  * use installed program `.\acesschk64.exe /accepteula -uwdq "C:\"`
+  * use installed program `.\acesschk64.exe /accepteula -uwdq "C:\Program Files\"`
+  * use installed program `.\acesschk64.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"`
+* useful comamnd to find by filename `dir <filename> /s` (executed from C:\\)
+* print content of flag file `type flagUSP.txt`
